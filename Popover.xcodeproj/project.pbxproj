@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C309EB0F16F3502500AC352B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C309EB0E16F3502500AC352B /* Cocoa.framework */; };
+		C309EB1916F3502500AC352B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C309EB1716F3502500AC352B /* InfoPlist.strings */; };
+		C309EB1B16F3502500AC352B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C309EB1A16F3502500AC352B /* main.m */; };
+		C309EB1F16F3502500AC352B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C309EB1D16F3502500AC352B /* Credits.rtf */; };
+		C309EB2216F3502500AC352B /* HJHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C309EB2116F3502500AC352B /* HJHAppDelegate.m */; };
+		C309EB2516F3502500AC352B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C309EB2316F3502500AC352B /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C309EB0B16F3502500AC352B /* Popover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popover.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C309EB0E16F3502500AC352B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C309EB1116F3502500AC352B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C309EB1216F3502500AC352B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C309EB1316F3502500AC352B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C309EB1616F3502500AC352B /* Popover-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Popover-Info.plist"; sourceTree = "<group>"; };
+		C309EB1816F3502500AC352B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C309EB1A16F3502500AC352B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C309EB1C16F3502500AC352B /* Popover-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Popover-Prefix.pch"; sourceTree = "<group>"; };
+		C309EB1E16F3502500AC352B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		C309EB2016F3502500AC352B /* HJHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HJHAppDelegate.h; sourceTree = "<group>"; };
+		C309EB2116F3502500AC352B /* HJHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HJHAppDelegate.m; sourceTree = "<group>"; };
+		C309EB2416F3502500AC352B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C309EB0816F3502500AC352B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C309EB0F16F3502500AC352B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C309EB0216F3502500AC352B = {
+			isa = PBXGroup;
+			children = (
+				C309EB1416F3502500AC352B /* Popover */,
+				C309EB0D16F3502500AC352B /* Frameworks */,
+				C309EB0C16F3502500AC352B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C309EB0C16F3502500AC352B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C309EB0B16F3502500AC352B /* Popover.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C309EB0D16F3502500AC352B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C309EB0E16F3502500AC352B /* Cocoa.framework */,
+				C309EB1016F3502500AC352B /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C309EB1016F3502500AC352B /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C309EB1116F3502500AC352B /* AppKit.framework */,
+				C309EB1216F3502500AC352B /* CoreData.framework */,
+				C309EB1316F3502500AC352B /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C309EB1416F3502500AC352B /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				C309EB2016F3502500AC352B /* HJHAppDelegate.h */,
+				C309EB2116F3502500AC352B /* HJHAppDelegate.m */,
+				C309EB2316F3502500AC352B /* MainMenu.xib */,
+				C309EB1516F3502500AC352B /* Supporting Files */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
+		C309EB1516F3502500AC352B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C309EB1616F3502500AC352B /* Popover-Info.plist */,
+				C309EB1716F3502500AC352B /* InfoPlist.strings */,
+				C309EB1A16F3502500AC352B /* main.m */,
+				C309EB1C16F3502500AC352B /* Popover-Prefix.pch */,
+				C309EB1D16F3502500AC352B /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C309EB0A16F3502500AC352B /* Popover */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C309EB2816F3502500AC352B /* Build configuration list for PBXNativeTarget "Popover" */;
+			buildPhases = (
+				C309EB0716F3502500AC352B /* Sources */,
+				C309EB0816F3502500AC352B /* Frameworks */,
+				C309EB0916F3502500AC352B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Popover;
+			productName = Popover;
+			productReference = C309EB0B16F3502500AC352B /* Popover.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C309EB0316F3502500AC352B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HJH;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Jonghwan Hyeon";
+			};
+			buildConfigurationList = C309EB0616F3502500AC352B /* Build configuration list for PBXProject "Popover" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C309EB0216F3502500AC352B;
+			productRefGroup = C309EB0C16F3502500AC352B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C309EB0A16F3502500AC352B /* Popover */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C309EB0916F3502500AC352B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C309EB1916F3502500AC352B /* InfoPlist.strings in Resources */,
+				C309EB1F16F3502500AC352B /* Credits.rtf in Resources */,
+				C309EB2516F3502500AC352B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C309EB0716F3502500AC352B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C309EB1B16F3502500AC352B /* main.m in Sources */,
+				C309EB2216F3502500AC352B /* HJHAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C309EB1716F3502500AC352B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C309EB1816F3502500AC352B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C309EB1D16F3502500AC352B /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C309EB1E16F3502500AC352B /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		C309EB2316F3502500AC352B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C309EB2416F3502500AC352B /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C309EB2616F3502500AC352B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C309EB2716F3502500AC352B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C309EB2916F3502500AC352B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Popover/Popover-Prefix.pch";
+				INFOPLIST_FILE = "Popover/Popover-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C309EB2A16F3502500AC352B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Popover/Popover-Prefix.pch";
+				INFOPLIST_FILE = "Popover/Popover-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C309EB0616F3502500AC352B /* Build configuration list for PBXProject "Popover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C309EB2616F3502500AC352B /* Debug */,
+				C309EB2716F3502500AC352B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C309EB2816F3502500AC352B /* Build configuration list for PBXNativeTarget "Popover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C309EB2916F3502500AC352B /* Debug */,
+				C309EB2A16F3502500AC352B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C309EB0316F3502500AC352B /* Project object */;
+}
