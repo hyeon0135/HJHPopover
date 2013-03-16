@@ -20,7 +20,10 @@
     NSAssert(bufferingType == NSBackingStoreBuffered, @"window's buffering type == NSBackingStoreBuffered");
     self = [super initWithContentRect:contentRect styleMask:NSBorderlessWindowMask backing:bufferingType defer:NO];
     if (!self) return nil;
-        
+    
+    self.opaque = NO;
+    self.backgroundColor = [NSColor clearColor];
+    
     return self;
 }
 
@@ -53,5 +56,14 @@
 - (BOOL)canBecomeKeyWindow
 {
     return YES;
+}
+
+- (void)mouseDragged:(NSEvent *)theEvent
+{
+    NSPoint origin;
+    origin.x = self.frame.origin.x + theEvent.deltaX;
+    origin.y = self.frame.origin.y - theEvent.deltaY;
+    
+    self.frameOrigin = origin;
 }
 @end
