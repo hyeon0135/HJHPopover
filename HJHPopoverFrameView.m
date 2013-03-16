@@ -10,59 +10,85 @@
 
 #define ARROW_WIDTH 20
 #define ARROW_HEIGHT 10
+
 #define CORNER_RADIUS 5
 
 @implementation HJHPopoverFrameView
 - (void)drawRect:(NSRect)dirtyRect
 {
-    NSRect bounds = self.bounds;
+    NSPoint pointOfArrow = [self pointOfArrowOnEdge:self.edge];
+    NSBezierPath *pathOfArrow = [self bezierPathOfArrowAtPoint:pointOfArrow onEdge:self.edge];
     
-    NSRect backgroundBounds = bounds;
-    NSBezierPath *arrowPath = [NSBezierPath bezierPath];
-    switch (self.edge) {
-        case NSMinXEdge:
-            [arrowPath moveToPoint:NSMakePoint(NSMaxX(bounds), NSMidY(bounds))];
-            [arrowPath lineToPoint:NSMakePoint(NSMaxX(bounds) - ARROW_HEIGHT, NSMidY(bounds) - (ARROW_WIDTH / 2.0f))];
-            [arrowPath lineToPoint:NSMakePoint(NSMaxX(bounds) - ARROW_HEIGHT, NSMidY(bounds) + (ARROW_WIDTH / 2.0f))];
-            
-            backgroundBounds.size.width -= ARROW_HEIGHT;
-            break;
-            
-        case NSMinYEdge:
-            [arrowPath moveToPoint:NSMakePoint(NSMidX(bounds), NSMinY(bounds))];
-            [arrowPath lineToPoint:NSMakePoint(NSMidX(bounds) - (ARROW_WIDTH / 2.0f), NSMinY(bounds) + ARROW_HEIGHT)];
-            [arrowPath lineToPoint:NSMakePoint(NSMidX(bounds) + (ARROW_WIDTH / 2.0f), NSMinY(bounds) + ARROW_HEIGHT)];
-            
-            backgroundBounds.origin.y += ARROW_HEIGHT;
-            backgroundBounds.size.height -= ARROW_HEIGHT;
-            break;
-            
-        case NSMaxXEdge:
-            [arrowPath moveToPoint:NSMakePoint(NSMinX(bounds), NSMidY(bounds))];
-            [arrowPath lineToPoint:NSMakePoint(NSMinX(bounds) + ARROW_HEIGHT, NSMidY(bounds) - (ARROW_WIDTH / 2.0f))];
-            [arrowPath lineToPoint:NSMakePoint(NSMinX(bounds) + ARROW_HEIGHT, NSMidY(bounds) + (ARROW_WIDTH / 2.0f))];
-            
-            backgroundBounds.origin.x += ARROW_HEIGHT;
-            backgroundBounds.size.width -= ARROW_HEIGHT;
-            break;
-            
-        case NSMaxYEdge:
-            [arrowPath moveToPoint:NSMakePoint(NSMidX(bounds), NSMaxY(bounds))];
-            [arrowPath lineToPoint:NSMakePoint(NSMidX(bounds) - (ARROW_WIDTH / 2.0f), NSMaxY(bounds) - ARROW_HEIGHT)];
-            [arrowPath lineToPoint:NSMakePoint(NSMidX(bounds) + (ARROW_WIDTH / 2.0f), NSMaxY(bounds) - ARROW_HEIGHT)];
-            
-            backgroundBounds.size.height -= ARROW_HEIGHT;
-            break;
-    }
-    
-    NSBezierPath *backgroundPath = [NSBezierPath bezierPath];
-    [backgroundPath appendBezierPathWithRoundedRect:backgroundBounds xRadius:CORNER_RADIUS yRadius:CORNER_RADIUS];
+    NSRect boundsOfBackground = [self boundsOfBackgroundOnEdge:self.edge];
+    NSBezierPath *pathOfBackground = [NSBezierPath bezierPath];
+    [pathOfBackground appendBezierPathWithRoundedRect:boundsOfBackground xRadius:CORNER_RADIUS yRadius:CORNER_RADIUS];
     
     NSBezierPath *path = [NSBezierPath bezierPath];
-    [path appendBezierPath:arrowPath];
-    [path appendBezierPath:backgroundPath];
+    [path appendBezierPath:pathOfArrow];
+    [path appendBezierPath:pathOfBackground];
     
     [[NSColor whiteColor] setFill];
     [path fill];
+}
+
+- (NSPoint)pointOfArrowOnEdge:(NSRectEdge)edge
+{
+    NSRect bounds = self.bounds;
+    NSPoint point = NSMakePoint(NSMidX(bounds), NSMidY(bounds));
+    
+    CGFloat (*converter[])(NSRect rect) = { NSMaxX, NSMaxY, NSMinX, NSMinY };
+    CGFloat *pointsToBeModified[] = { &point.x, &point.y, &point.x, &point.y };
+    
+    *(pointsToBeModified[edge]) = (converter[edge])(bounds);
+    
+    return point;
+}
+
+- (NSBezierPath *)bezierPathOfArrowAtPoint:(NSPoint)point onEdge:(NSRectEdge)edge
+{
+    NSBezierPath *path = [NSBezierPath bezierPath];
+    [path moveToPoint:point];
+    
+    CGFloat directions[] = { -1, -1, +1, +1 };
+    CGFloat modifier = directions[edge] * ARROW_HEIGHT;
+    switch (edge) {
+        case NSMinXEdge:
+        case NSMaxXEdge:
+            [path lineToPoint:NSMakePoint(point.x + modifier, point.y + (ARROW_WIDTH / 2.0f))];
+            [path lineToPoint:NSMakePoint(point.x + modifier, point.y - (ARROW_WIDTH / 2.0f))];
+            break;
+            
+        case NSMinYEdge:
+        case NSMaxYEdge:
+            [path lineToPoint:NSMakePoint(point.x + (ARROW_WIDTH / 2.0f), point.y + modifier)];
+            [path lineToPoint:NSMakePoint(point.x - (ARROW_WIDTH / 2.0f), point.y + modifier)];
+            break;
+    }
+    [path lineToPoint:point];
+    [path closePath];
+    
+    return path;
+}
+
+- (NSRect)boundsOfBackgroundOnEdge:(NSRectEdge)edge
+{
+    NSRect bounds = self.bounds;
+    
+    CGFloat modifiers[] = { 0.0f, 0.0f, ARROW_HEIGHT, ARROW_HEIGHT };
+    switch (edge) {
+        case NSMinXEdge:
+        case NSMaxXEdge:
+            bounds.origin.x += modifiers[edge];
+            bounds.size.width -= ARROW_HEIGHT;
+            break;
+            
+        case NSMinYEdge:
+        case NSMaxYEdge:
+            bounds.origin.y += modifiers[edge];
+            bounds.size.height -= ARROW_HEIGHT;
+            break;
+    }
+    
+    return bounds;
 }
 @end
