@@ -33,8 +33,8 @@
 		C309EB2416F3502500AC352B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		C32A9A3F16F3666200CAA52E /* HJHPopoverWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJHPopoverWindow.h; sourceTree = "<group>"; };
 		C32A9A4016F3666200CAA52E /* HJHPopoverWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJHPopoverWindow.m; sourceTree = "<group>"; };
-		C3C8F86716F4380600B6E0CD /* HJHPopoverFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HJHPopoverFrameView.h; path = ../HJHPopoverFrameView.h; sourceTree = "<group>"; };
-		C3C8F86816F4380600B6E0CD /* HJHPopoverFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HJHPopoverFrameView.m; path = ../HJHPopoverFrameView.m; sourceTree = "<group>"; };
+		C3C8F86716F4380600B6E0CD /* HJHPopoverFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJHPopoverFrameView.h; sourceTree = "<group>"; };
+		C3C8F86816F4380600B6E0CD /* HJHPopoverFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJHPopoverFrameView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
