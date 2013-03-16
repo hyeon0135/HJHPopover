@@ -9,5 +9,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface HJHPopoverFrameView : NSView
-
+@property (nonatomic) NSRectEdge edge;
 @end

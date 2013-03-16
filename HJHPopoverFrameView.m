@@ -15,18 +15,17 @@
 @implementation HJHPopoverFrameView
 - (void)drawRect:(NSRect)dirtyRect
 {
-    NSRectEdge edge = NSMinXEdge;
     NSRect bounds = self.bounds;
-
-    NSPoint origin = bounds.origin;
-    NSSize size = bounds.size;
+    
+    NSRect backgroundBounds = bounds;
     NSBezierPath *arrowPath = [NSBezierPath bezierPath];
-    switch (edge) {
+    switch (self.edge) {
         case NSMinXEdge:
             [arrowPath moveToPoint:NSMakePoint(NSMaxX(bounds), NSMidY(bounds))];
             [arrowPath lineToPoint:NSMakePoint(NSMaxX(bounds) - ARROW_HEIGHT, NSMidY(bounds) - (ARROW_WIDTH / 2.0f))];
             [arrowPath lineToPoint:NSMakePoint(NSMaxX(bounds) - ARROW_HEIGHT, NSMidY(bounds) + (ARROW_WIDTH / 2.0f))];
-            size.width -= ARROW_HEIGHT;
+            
+            backgroundBounds.size.width -= ARROW_HEIGHT;
             break;
             
         case NSMinYEdge:
@@ -34,8 +33,8 @@
             [arrowPath lineToPoint:NSMakePoint(NSMidX(bounds) - (ARROW_WIDTH / 2.0f), NSMinY(bounds) + ARROW_HEIGHT)];
             [arrowPath lineToPoint:NSMakePoint(NSMidX(bounds) + (ARROW_WIDTH / 2.0f), NSMinY(bounds) + ARROW_HEIGHT)];
             
-            origin.y += ARROW_HEIGHT;
-            size.height -= ARROW_HEIGHT;
+            backgroundBounds.origin.y += ARROW_HEIGHT;
+            backgroundBounds.size.height -= ARROW_HEIGHT;
             break;
             
         case NSMaxXEdge:
@@ -43,23 +42,21 @@
             [arrowPath lineToPoint:NSMakePoint(NSMinX(bounds) + ARROW_HEIGHT, NSMidY(bounds) - (ARROW_WIDTH / 2.0f))];
             [arrowPath lineToPoint:NSMakePoint(NSMinX(bounds) + ARROW_HEIGHT, NSMidY(bounds) + (ARROW_WIDTH / 2.0f))];
             
-            origin.x += ARROW_HEIGHT;
-            size.width -= ARROW_HEIGHT;
+            backgroundBounds.origin.x += ARROW_HEIGHT;
+            backgroundBounds.size.width -= ARROW_HEIGHT;
             break;
             
         case NSMaxYEdge:
             [arrowPath moveToPoint:NSMakePoint(NSMidX(bounds), NSMaxY(bounds))];
             [arrowPath lineToPoint:NSMakePoint(NSMidX(bounds) - (ARROW_WIDTH / 2.0f), NSMaxY(bounds) - ARROW_HEIGHT)];
             [arrowPath lineToPoint:NSMakePoint(NSMidX(bounds) + (ARROW_WIDTH / 2.0f), NSMaxY(bounds) - ARROW_HEIGHT)];
-            size.height -= ARROW_HEIGHT;
-            break;
             
-        default:
+            backgroundBounds.size.height -= ARROW_HEIGHT;
             break;
     }
     
     NSBezierPath *backgroundPath = [NSBezierPath bezierPath];
-    [backgroundPath appendBezierPathWithRoundedRect:NSMakeRect(origin.x, origin.y, size.width, size.height) xRadius:CORNER_RADIUS yRadius:CORNER_RADIUS];
+    [backgroundPath appendBezierPathWithRoundedRect:backgroundBounds xRadius:CORNER_RADIUS yRadius:CORNER_RADIUS];
     
     NSBezierPath *path = [NSBezierPath bezierPath];
     [path appendBezierPath:arrowPath];
