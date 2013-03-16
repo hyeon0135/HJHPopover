@@ -13,6 +13,8 @@
 		C309EB1F16F3502500AC352B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C309EB1D16F3502500AC352B /* Credits.rtf */; };
 		C309EB2216F3502500AC352B /* HJHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C309EB2116F3502500AC352B /* HJHAppDelegate.m */; };
 		C309EB2516F3502500AC352B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C309EB2316F3502500AC352B /* MainMenu.xib */; };
+		C32A9A4116F3666200CAA52E /* HJHPopoverWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C32A9A4016F3666200CAA52E /* HJHPopoverWindow.m */; };
+		C3C8F86916F4380600B6E0CD /* HJHPopoverFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8F86816F4380600B6E0CD /* HJHPopoverFrameView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		C309EB2016F3502500AC352B /* HJHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HJHAppDelegate.h; sourceTree = "<group>"; };
 		C309EB2116F3502500AC352B /* HJHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HJHAppDelegate.m; sourceTree = "<group>"; };
 		C309EB2416F3502500AC352B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C32A9A3F16F3666200CAA52E /* HJHPopoverWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJHPopoverWindow.h; sourceTree = "<group>"; };
+		C32A9A4016F3666200CAA52E /* HJHPopoverWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJHPopoverWindow.m; sourceTree = "<group>"; };
+		C3C8F86716F4380600B6E0CD /* HJHPopoverFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HJHPopoverFrameView.h; path = ../HJHPopoverFrameView.h; sourceTree = "<group>"; };
+		C3C8F86816F4380600B6E0CD /* HJHPopoverFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HJHPopoverFrameView.m; path = ../HJHPopoverFrameView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,10 @@
 				C309EB2016F3502500AC352B /* HJHAppDelegate.h */,
 				C309EB2116F3502500AC352B /* HJHAppDelegate.m */,
 				C309EB2316F3502500AC352B /* MainMenu.xib */,
+				C32A9A3F16F3666200CAA52E /* HJHPopoverWindow.h */,
+				C32A9A4016F3666200CAA52E /* HJHPopoverWindow.m */,
+				C3C8F86716F4380600B6E0CD /* HJHPopoverFrameView.h */,
+				C3C8F86816F4380600B6E0CD /* HJHPopoverFrameView.m */,
 				C309EB1516F3502500AC352B /* Supporting Files */,
 			);
 			path = Popover;
@@ -169,6 +179,8 @@
 			files = (
 				C309EB1B16F3502500AC352B /* main.m in Sources */,
 				C309EB2216F3502500AC352B /* HJHAppDelegate.m in Sources */,
+				C32A9A4116F3666200CAA52E /* HJHPopoverWindow.m in Sources */,
+				C3C8F86916F4380600B6E0CD /* HJHPopoverFrameView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +316,7 @@
 				C309EB2A16F3502500AC352B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
